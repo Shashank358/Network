@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chat_list_user_rel_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/chat_list_user_single_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:elevation="1dp"
+        android:src="@drawable/avatar"
+        app:civ_border_color="@color/grey"
+        app:civ_border_width="1dp" />
+
+    <TextView
+        android:id="@+id/chat_list_user_single_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
+        android:layout_toStartOf="@+id/chat_list_unread_count"
+        android:layout_toEndOf="@+id/chat_list_user_single_image"
+        android:fontFamily="@font/alegreya"
+        android:maxWidth="200dp"
+        android:text="UserName"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/chat_list_user_single_last_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chat_list_user_single_name"
+        android:layout_alignStart="@+id/chat_list_user_single_name"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/alegreya"
+        android:maxLines="1"
+        android:text="Text Message"
+        android:textColor="@color/Dgrey"
+        android:textSize="16sp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/chat_list_single_unread_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/chat_list_user_single_name"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/follow_page_background"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="0"
+        android:textColor="@color/tabLayoutColor"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/chat_list_unread_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/chat_list_user_single_name"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="false"
+        android:layout_marginEnd="16dp"
+        android:text="0"
+        android:textColor="@color/Indigo"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

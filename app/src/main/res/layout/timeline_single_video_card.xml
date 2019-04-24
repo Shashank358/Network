@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="16dp">
+
+    <RelativeLayout
+        android:id="@+id/timeline_video_personal_info_rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/timeline_video_user_profile"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/avatar" />
+
+        <TextView
+            android:id="@+id/timeline_video_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@+id/timeline_video_user_profile"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/timeline_video_personal_info_rel">
+
+        <VideoView
+            android:id="@+id/timeline_video_videoview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:clickable="false"
+            android:fitsSystemWindows="true" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/chat_activity_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/chat_activity_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/chat_activity_user_profile_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/avatar" />
+
+                <TextView
+                    android:id="@+id/chat_activity_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/chat_activity_user_profile_image"
+                    android:layout_alignParentBottom="false"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text="User Name"
+                    android:textColor="@color/black" />
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/chat_activity_messages_list_relative"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/chat_activity_type_message_constraint"
+        android:layout_below="@+id/chat_activity_app_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chat_activity_app_bar">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/chat_activity_message_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/chat_activity_type_message_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+
+        <RelativeLayout
+            android:id="@+id/chat_options_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/chat_activity_type_message_editText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/chat_activity_type_message_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/attach_dialog_background"
+            android:elevation="1dp"
+            android:hint="Text a message..."
+            android:maxHeight="200dp"
+            android:paddingStart="48dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="100dp"
+            android:paddingBottom="12dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/chat_activity_message_option_expand_image"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="18dp"
+            android:background="@drawable/follow_page_background"
+            android:elevation="1dp"
+            android:src="@drawable/ic_keyboard_arrow_up_black_24dp"
+            android:tint="@color/tabLayoutColor"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/chat_activity_mic_image"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="18dp"
+            android:elevation="1dp"
+            android:src="@drawable/ic_mic_black_24dp"
+            android:tint="@color/Indigo"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/chat_activity_emoji_image"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="18dp"
+            android:elevation="1dp"
+            android:src="@drawable/ic_insert_emoticon_black_24dp"
+            android:tint="@color/darker_grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/chat_activity_camera_image" />
+
+        <ImageView
+            android:id="@+id/chat_activity_send_message_image"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="18dp"
+            android:elevation="1dp"
+            android:src="@drawable/ic_send_black_24dp"
+            android:tint="@color/Indigo"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/chat_activity_type_message_editText" />
+
+        <ImageView
+            android:id="@+id/chat_activity_camera_image"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="18dp"
+            android:elevation="1dp"
+            android:src="@drawable/ic_camera_alt_black_24dp"
+            android:tint="@color/darker_grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/chat_activity_send_message_image" />
+
+        <ImageView
+            android:id="@+id/chat_activity_message_option_collapse_image"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="18dp"
+            android:background="@drawable/follow_page_background"
+            android:elevation="1dp"
+            android:src="@drawable/ic_keyboard_arrow_down_black_24dp"
+            android:tint="@color/tabLayoutColor"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/gallery_images_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chat_activity_type_message_constraint">
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

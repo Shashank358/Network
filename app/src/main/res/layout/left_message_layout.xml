@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="75dp">
+
+        <TextView
+            android:id="@+id/text_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/left_message_backgound"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:text="Text message"
+            android:textColor="@color/tabLayoutColor"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/time_ago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_message"
+            android:layout_alignStart="@+id/text_message"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="-8dp"
+            android:text="time"
+            android:textColor="@color/Dgrey"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/read_or_delivered_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/text_message"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/follow_page_background"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:textColor="@color/tabLayoutColor"
+            android:textSize="10sp"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

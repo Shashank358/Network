@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/</item>
+        <item>@font/abhaya_libre</item>
+        <item>@font/actor</item>
+        <item>@font/alegreya</item>
+        <item>@font/alice</item>
+        <item>@font/arsenal</item>
+        <item>@font/arvo</item>
+        <item>@font/asar</item>
+        <item>@font/assistant_extralight</item>
+        <item>@font/athiti_extralight</item>
+    </array>
+</resources>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditGroupActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/edit_group_activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/toolbar_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/edit_group_activity_done_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:fontFamily="@font/alegreya"
+            android:text="Done"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="16dp"/>
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/lightGrey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_group_activity_toolbar">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <RelativeLayout
+                android:id="@+id/edit_group_group_cover_rel"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/edit_group_group_cover_imageview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="250dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_image" />
+
+                <ImageView
+                    android:id="@+id/edit_group_add_group_cover_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/edit_group_name_edittext"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="8dp"
+                    android:layout_marginEnd="0dp"
+                    android:background="@drawable/attach_dialog_background"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_camera_alt_black_24dp" />
+
+                <EditText
+                    android:id="@+id/edit_group_name_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edit_group_group_cover_imageview"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:drawable/screen_background_light_transparent"
+                    android:fontFamily="@font/alegreya"
+                    android:hint="Group Title"
+                    android:padding="8dp"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/edit_group_group_members_rel"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_group_group_cover_rel">
+
+                <TextView
+                    android:id="@+id/edit_group_all_members_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/alegreya"
+                    android:text="All Members"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/edit_group_all_members_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/edit_group_all_members_text"
+                    android:layout_marginTop="8dp" />
+            </RelativeLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>

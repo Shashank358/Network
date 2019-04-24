@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".YourPageActivity">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/my_page_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/toolbar_background">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/my_page_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/toolbar_background"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/my_page_nested_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/my_page_app_bar"
+        android:layout_alignParentStart="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/page_cover_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxHeight="250dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/publish_prev_menu_back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/create_page_page_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/alegreya"
+                android:maxLines="2"
+                android:text="Page Title"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toStartOf="@+id/create_page_edit_page_detail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/page_cover_image" />
+
+            <TextView
+                android:id="@+id/my_page_follow_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/follow_page_background"
+                android:elevation="2dp"
+                android:fontFamily="@font/alegreya"
+                android:paddingStart="24dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="24dp"
+                android:paddingBottom="5dp"
+                android:text="Follow"
+                android:textAlignment="center"
+                android:textColor="@color/tabLayoutColor"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_page_page_followers_count" />
+
+            <TextView
+                android:id="@+id/create_page_edit_page_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/edit_page_background"
+                android:elevation="2dp"
+                android:paddingStart="8dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="5dp"
+                android:text="Edit Page"
+                android:textColor="@color/Indigo"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/page_cover_image" />
+
+            <TextView
+                android:id="@+id/your_page_page_tag"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alegreya"
+                android:maxLines="2"
+                android:text="Page Tag"
+                android:textAlignment="textStart"
+                android:textColor="@color/Indigo"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/create_page_page_title"
+                app:layout_constraintStart_toStartOf="@+id/create_page_page_title"
+                app:layout_constraintTop_toBottomOf="@+id/create_page_page_title" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/my_page_followers_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/your_page_page_tag" />
+
+            <TextView
+                android:id="@+id/create_page_page_followers_count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/alegreya"
+                android:text="page followers"
+                android:textAlignment="textStart"
+                android:textColor="@color/Dgrey"
+                app:layout_constraintEnd_toEndOf="@+id/your_page_page_tag"
+                app:layout_constraintStart_toStartOf="@+id/create_page_page_title"
+                app:layout_constraintTop_toBottomOf="@+id/my_page_followers_list" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/create_page_publish_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:background="@color/lightGrey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/publish_something_in_page_card">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="About This Page"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/my_page_follow_text" />
+
+            <TextView
+                android:id="@+id/your_page_page_about"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/edit_page_background"
+                android:elevation="2dp"
+                android:fontFamily="@font/alegreya"
+                android:padding="8dp"
+                android:text="Tell something about this page"
+                android:textAlignment="textStart"
+                android:textColor="@color/Dgrey"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
+            <TextView
+                android:id="@+id/my_page_other_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:autoLink="all"
+                android:background="@drawable/edit_page_background"
+                android:clickable="true"
+                android:fontFamily="@font/alegreya"
+                android:linksClickable="true"
+                android:padding="8dp"
+                android:text="Email/Website"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/your_page_page_about" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/publish_something_in_page_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                app:cardElevation="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/my_page_other_details">
+
+                <TextView
+                    android:id="@+id/create_page_publish_something"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="200dp"
+                    android:paddingBottom="12dp"
+                    android:text="Publish Something" />
+
+                <ImageView
+                    android:id="@+id/create_page_publish_image"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_insert_photo_black_24dp"
+                    android:tint="@color/Indigo" />
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.constraint.Group
+                android:id="@+id/group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                app:layout_constraintStart_toEndOf="@+id/textView3"
+                app:layout_constraintTop_toTopOf="@+id/textView3"
+                app:layout_constraintVertical_bias="1.0"
+                android:src="@drawable/ic_details_black_24dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FeedCommentActivity">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/comment_activity_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/toolbar_background">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/comment_activity_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/toolbar_background"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/comment_activity_user_profile_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/avatar" />
+
+                <TextView
+                    android:id="@+id/comment_activity_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_toEndOf="@+id/comment_activity_user_profile_image"
+                    android:fontFamily="@font/alegreya"
+                    android:text="User Name"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/comment_activity_page_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/comment_activity_user_name"
+                    android:layout_marginBottom="8dp"
+                    android:layout_toEndOf="@+id/comment_activity_page_logo"
+                    android:fontFamily="@font/alegreya"
+                    android:text="Page Name"
+                    android:textColor="@color/Indigo"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/comment_activity_page_logo"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_below="@+id/comment_activity_user_name"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_toEndOf="@+id/comment_activity_user_profile_image"
+                    android:src="@drawable/ic_group_work_black_24dp"
+                    android:tint="@color/Indigo" />
+
+                <RelativeLayout
+                    android:id="@+id/comment_activity_feed_text_relative"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/comment_activity_page_name"
+                    android:paddingStart="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="8dp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/comment_activity_feed_comment_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/alegreya"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:visibility="visible" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/comment_activity_publish_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/comment_activity_feed_text_relative"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="400dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/avatar" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/comment_activity_all_comments_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/comment_activity_view"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/tabLayoutColor" />
+
+                <ImageView
+                    android:id="@+id/comment_activity_publish_like"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/comment_activity_publish_preview"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="20dp"
+                    app:srcCompat="@drawable/icons8_two_hearts" />
+
+                <ImageView
+                    android:id="@+id/comment_activity_publish_like_color"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/comment_activity_publish_preview"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="0dp"
+                    android:src="@drawable/icons8_two_heartsa_red"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/comment_activity_comment_image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/comment_activity_publish_preview"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="70dp"
+                    android:src="@drawable/icons8_comment_bubble" />
+
+                <ImageView
+                    android:id="@+id/comment_activity_publish_share"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/comment_activity_publish_preview"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    app:srcCompat="@drawable/icons8_share_arrow" />
+
+                <View
+                    android:id="@+id/comment_activity_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/comment_activity_comments_count"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/grey" />
+
+                <TextView
+                    android:id="@+id/comment_activity_comments_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/comment_activity_comment_image"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="false"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/alegreya"
+                    android:text="All Comments"
+                    android:textColor="@color/Dgrey" />
+
+                <TextView
+                    android:id="@+id/comment_activity_like_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/comment_activity_comment_image"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/alegreya"
+                    android:text="No Likes"
+                    android:textColor="@color/Dgrey" />
+
+
+            </RelativeLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/comment_activity_comment_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="false"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_toStartOf="@+id/comment_activity_send_comment_view"
+            android:background="@drawable/attach_dialog_background"
+            android:fontFamily="@font/alegreya"
+            android:hint="Text your comment..."
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/comment_activity_send_comment_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/follow_page_background"
+            android:fontFamily="@font/alegreya"
+            android:paddingStart="12dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="2dp"
+            android:text="Send"
+            android:textColor="@color/tabLayoutColor"
+            android:textSize="18sp" />
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

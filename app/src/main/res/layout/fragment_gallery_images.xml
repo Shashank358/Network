@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.BottomSheets.GalleryImagesFrag">
+
+
+    <GridView
+        android:id="@+id/galleryGridView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/all_photos_text"
+        android:background="@drawable/attach_dialog_background"
+        android:columnWidth="280dp"
+        android:footerDividersEnabled="false"
+        android:gravity="center"
+        android:horizontalSpacing="2dp"
+        android:numColumns="3"
+        android:padding="2dp"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="2dp"></GridView>
+
+
+</FrameLayout>
